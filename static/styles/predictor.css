@@ -1,58 +1,82 @@
-.container{
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-
-.formcontent{
-     width: 400px;
-        height: auto;
-        border-radius: 50px;
-        background-color: #ffe4e4;
-        border: 2px solid #ef3333;
-        display: flex;
-        flex-direction: column;
-        padding: 55px 69px 55px 69px;
-        margin: 30px;
+.formcontent {
+    width: 400px;
+    background-color: #ffe4e4;
+    border: 2px solid #ef3333;
+    border-radius: 50px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.formcontent label{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    color: #ef3333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
+    color: #616161;
+    margin-top: 15px;
 }
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ef3333;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
 .gender {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-around;
-    margin-bottom: 20px;
-    
+    margin-top: 10px;
 }
 
-input[type=number],
-select {
-    margin-top: 8px;
-    padding: 13px 15px 13px 15px;
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: #ef3333;
-    border-style: solid;
+.gender div {
+    display: flex;
+    align-items: center;
 }
 
-input[type=submit]{
-        margin-top: 35px;
-        text-align: center;
-        padding: 15px 100px 15px 100px;
-        background-color: #ef3333;
-        border: 0;
-        font-size: 20px;
-        color: white;
-        border-radius: 10px;
-        transition: all 1s ease;
+input[type="radio"] {
+    margin-right: 5px;
 }
-input[type=submit]:hover{
-    background-color: #fa5858;
-    font-size: 22px;
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #ef3333;
     color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #fa5858;
 }

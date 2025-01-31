@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+</head>
+<body>
+    <!-- Include Navigation Bar -->
+    {% include 'nav.html' %}
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="head">
+            <h1 class="headline">Heart Disease Predictor</h1>
+            <p class="subline">Predict your risk of heart disease with our advanced machine learning model. Get started now!</p>
+            <a href="{{ url_for('predict_disease') }}" class="cta-button">Start Prediction</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2>About the Predictor</h2>
+        <p>Our heart disease predictor uses state-of-the-art algorithms to analyze your health data and provide accurate risk assessments. Simply input your details, and we'll do the rest.</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature">
+            <h3>Easy to Use</h3>
+            <p>Our intuitive interface makes it simple to input your data and get results quickly.</p>
+        </div>
+        <div class="feature">
+            <h3>Accurate Results</h3>
+            <p>Powered by advanced machine learning, our predictor delivers reliable risk assessments.</p>
+        </div>
+        <div class="feature">
+            <h3>Free and Accessible</h3>
+            <p>Our tool is completely free to use and accessible to everyone.</p>
+        </div>
+    </div>
+</body>
+</html>

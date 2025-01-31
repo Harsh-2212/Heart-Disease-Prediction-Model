@@ -2,101 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>predictor</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='predictor.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/nav.css') }}">
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/predictor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
-
 </head>
 <body>
-   {% include 'nav.html' %}
-<div class="container">
-<form action="{{ url_for('predict_disease') }}" method="post" class="formcontent">
-  <h1 style="
-                text-align: center;
-                font-weight: 700;
-                font-size: 28px;
-                line-height: 38px;
-                font-family: sans-serif;
-              ">
-    Predictor
-  </h1>
-  <label for="gender" style="margin-top: 30px;">Enter your age</label>
-  <input type="number" name="age" id="age">
-  <label for="gender" style="margin-top: 20px;">Gender</label>
-  <div class="gender">
-    <div class="male">
-    <input type="radio" id="male" name="gender" value="0">
-    <label for="male">Male</label>
+    <!-- Include Navigation Bar -->
+    {% include 'nav.html' %}
+
+    <!-- Predictor Form -->
+    <div class="container">
+        <form action="{{ url_for('predict_disease') }}" method="post" class="formcontent">
+            <h1>Heart Disease Predictor</h1>
+
+            <!-- Age Input -->
+            <label for="age">Enter your age</label>
+            <input type="number" name="age" id="age" required>
+
+            <!-- Gender Input -->
+            <label for="gender">Gender</label>
+            <div class="gender">
+                <div class="male">
+                    <input type="radio" id="male" name="gender" value="0" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="female">
+                    <input type="radio" id="female" name="gender" value="1" required>
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <!-- Chest Pain Type -->
+            <label for="cp">Select your chest pain type</label>
+            <select name="cp" id="cp" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <!-- Resting Blood Pressure -->
+            <label for="trestbps">Resting Blood Pressure</label>
+            <input type="number" name="trestbps" id="trestbps" required>
+
+            <!-- Cholesterol Level -->
+            <label for="chol">Cholesterol Level</label>
+            <input type="number" name="chol" id="chol" required>
+
+            <!-- Fasting Blood Sugar -->
+            <label for="fasting_blood_sugar">Fasting Blood Sugar</label>
+            <input type="number" name="fasting_blood_sugar" id="fasting_blood_sugar" required>
+
+            <!-- Rest ECG -->
+            <label for="ecg">Rest ECG</label>
+            <select name="ecg" id="ecg" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <!-- Maximum Heart Rate Achieved -->
+            <label for="thalach">Maximum Heart Rate Achieved</label>
+            <input type="number" name="thalach" id="thalach" required>
+
+            <!-- Exercise Induced Angina -->
+            <label for="exang">Exercise Induced Angina</label>
+            <select name="exang" id="exang" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+
+            <!-- Old Peak -->
+            <label for="oldpeak">Old Peak</label>
+            <input type="number" name="oldpeak" id="oldpeak" step="0.1" required>
+
+            <!-- Slope of the Peak Exercise ST Segment -->
+            <label for="slope">Slope of the Peak Exercise ST Segment</label>
+            <input type="number" name="slope" id="slope" required>
+
+            <!-- Number of Major Vessels -->
+            <label for="ca">Number of Major Vessels</label>
+            <select name="ca" id="ca" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <!-- Thal -->
+            <label for="thal">Thal</label>
+            <select name="thal" id="thal" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Calculate">
+        </form>
     </div>
-    <div class="female">
-    <input type="radio" id="female" name="gender" value="1">
-    <label for="female">Female</label>
-  </div>
-  </div>
-  <label>Select your chest pain type</label>
-  <select name="cp">
-    <option value="1"> 1</option>
-    <option value="2"> 2</option>
-    <option value="3"> 3</option>
-    <option value="4"> 4</option>
-  </select>
-  <br>
-
-  <label>resting blood pressure</label>
-  <input type="number" name="trestbps">
-  <br>
-  <label>Cholestrol level</label>
-  <input type="number" name="chol">
-  <br>
-  <label>fasting blood sugar</label>
-  <input type="number" name="fasting_blood_sugar">
-  <br>
-  <label>Rest ECG</label>
-  <select name="ecg">
-    <option value="0"> 0</option>
-    <option value="1"> 1</option>
-    <option value="2"> 2</option>
-    <option value="3"> 3</option>
-
-  </select>
-  <br>
-  <label>maximum heart rate achieved</label>
-  <input type="number" name="thalach">
-  <br>
-  <label>exercise induced angina</label>
-  <select name="exang">
-    <option value="0"> 0</option>
-    <option value="1"> 1</option>
-  </select>
-  <br>
-  <label>Old Peak</label>
-  <input type="number" name="oldpeak">
-  <br>
-  <label>the slope of the peak exercise ST segment</label>
-  <input type="number" name="slope">
-  <br>
-  <label>number of major vessels</label>
-  <select name="ca">
-    <option value="0"> 0</option>
-    <option value="1"> 1</option>
-    <option value="2"> 2</option>
-    <option value="3"> 3</option>
-  </select>
-  <br>
-
-  <label>thal</label>
-  <select name="thal">
-    <option value="0"> 0</option>
-    <option value="1"> 1</option>
-    <option value="2"> 2</option>
-    <option value="3"> 3</option>
-
-  </select>
-  <br>
-  <input type="submit" value="Calculate">
-
-</form></div>
-
 </body>
 </html>
