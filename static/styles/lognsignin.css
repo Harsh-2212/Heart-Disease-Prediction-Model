@@ -1,0 +1,71 @@
+.logincontent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 70px;
+
+}
+
+.signupcontent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 70px;
+    
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    width: 439px;
+    height: 430px;
+    background-color: #ffe4e4;
+        border: 2px solid #ef3333;
+    padding: 80px 30px;
+    border-radius: 15px;
+
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    width: 439px;
+    height: 650px;
+    background-color: #ffe4e4;
+        border: 2px solid #ef3333;
+        padding: 80px 30px;
+        border-radius: 15px;
+}
+
+.logsubmit {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #E33838;
+    border: 0;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+input[type=email],
+[type=password],
+[type=text],
+[type=number] {
+    padding: 13px 15px 13px 15px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #E0E0E0;
+    border-style: solid;
+}
+
+
+.signupcontent .img img,
+.logincontent .img img {
+    height: auto;
+    width: 500px;
+}
+.signupcontent .img img{
+    margin-top: 100px;
+}

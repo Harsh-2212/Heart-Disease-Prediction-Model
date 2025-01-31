@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/nav.css') }}">
+  </head>
+  <body>
+    {% include 'nav.html' %}
+  
+    <div class="output" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    {% if has_disease == 1 %}
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      "
+    >
+      <h1>
+        You Might be having a heart disease <br />
+        Please visit a doctor ASAP!!!
+      </h1>
+
+      <img src="static\images\NO.png" alt="" />
+    </div>
+    {% else %}
+    <div style="display: flex; align-items: center; flex-direction: column">
+      <h1>You got a healthy heart but take care</h1>
+      <img src="static\images\YES.png" alt="" />
+    </div>
+
+    {% endif %}
+    <a  style="margin-top: 20px;"
+    href="{{url_for('predict_disease')}}"
+    
+    ><button style="
+      background-color: #e33838;
+      border-radius: 8px;
+      padding: 10px 25px;
+      color: white;
+      border: 2px solid #e33838;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    ">Back</button></a
+  >
+</div>
+  </body>
+</html>

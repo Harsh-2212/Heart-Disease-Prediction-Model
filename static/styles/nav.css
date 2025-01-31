@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #fffefe;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #616161;
+    margin: 0px 20px;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+
+
+.loginbutton {
+    background-color: transparent;
+    border-radius: 8px;
+    margin-right: 10px;
+    padding: 0px;
+    border: 2px solid #E33838;
+    border-radius: 8px;
+    color: #616161 !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.signupbutton {
+    margin-left: 10px;
+    background-color: #E33838;
+    border-radius: 8px;
+    padding: 0px;
+    border: 2px solid #E33838;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+
+.navbar a:hover {
+    color: #E33838;
+}
